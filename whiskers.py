@@ -9,7 +9,7 @@ def hello():
         'hours': 3,
         'cycle': 1
     }
-    return render_template('test.html', data=data)
+    return render_template('whiskers.html', data=data)
 
 if __name__ == '__main__':
     app.run(port=5000,debug=True)
