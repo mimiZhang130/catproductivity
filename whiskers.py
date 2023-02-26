@@ -16,7 +16,7 @@ def hello():
         'fish': 5000, 
         'name': "McNugget",
         'hours': 0,
-        'cycle': 0
+        'cycle': 1
     }
     return render_template('whiskers.html', data=data)
 
