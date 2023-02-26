@@ -65,13 +65,13 @@ function formatCounter(){
 //sends alerts when done
 function sendAlert(){
   console.log(counter)
-  if(counter == 15 && work ){ // if counter reaches 25 minutes and person was working 
+  if(counter == 1502 && work ){ // if counter reaches 25 minutes and person was working 
     alert("Congrats, take a break!")
     if(cycle % 4 == 0){ // if the user has done 4 cycles of 25-5, they get a half an hour long break
-      rest = 18
+      rest = 1802
       console.log(18)
     }else{ // the usual break of 5 mins
-      rest = 3
+      rest = 302
       console.log(3)
     } 
     addCycle();
