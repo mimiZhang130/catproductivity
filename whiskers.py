@@ -1,7 +1,16 @@
 from flask import Flask, render_template
 #You need to use following line [app Flask(__name__]
 app = Flask(__name__)
+
+
 @app.route('/')
+def home():
+    data = {
+        "title": "Home Page",
+    }
+    return render_template('home.html', data=data)
+
+@app.route('/timer')
 def hello():
     data = {
         'fish': 0, 
