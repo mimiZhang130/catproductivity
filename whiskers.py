@@ -13,7 +13,7 @@ def home():
 @app.route('/timer')
 def hello():
     data = {
-        'fish': 0, 
+        'fish': 5000, 
         'name': "McNugget",
         'hours': 0,
         'cycle': 0
