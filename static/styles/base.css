@@ -67,3 +67,44 @@ a,
 button {
   color: inherit;
 }
+
+/* Navbar */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  height: 5rem;
+  background-color: var(--col-grey);
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-family: "Space Grotesk", sans-serif;
+  text-decoration: underline;
+  color: var(--col-black);
+}
+
+.nav__logo span img {
+  width: 2rem;
+}
+.nav__links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav__links li {
+  padding: 0.3rem 1rem;
+  color: var(--col-orange);
+  background-color: var(--col-grey);
+}
+.nav__links li a:hover {
+  text-decoration: underline;
+}
