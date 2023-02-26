@@ -1,27 +1,28 @@
-var cycle = parseInt(cycle)
-
-function addFish() {
-  fish = parseInt(fish)
-  fish += 10;
-  document.getElementById("fish").innerText = fish;
-}
-
-function addCycle() {
-  console.log(fish + " " + name + " " + hours + " " + cycle)
-  cycle++;
-  document.getElementById("cycle").innerText = cycle;
-  addFish();
-}
-
-function setCycle(currcycle){
-  cycle = currcycle
-  return cycle
-}
 
 let counter = 0; // seconds that have passed by
 let timeout; // timer
 let timer_on = 0; // if timer is on = 1, if timer is off = 0
 let work = 1; //if work = 1, person is working. if work = 0, person is not working
+var cycle = parseInt(cycle); // the cycle we are currently on
+let rest;
+
+
+function addFish() {
+  fish = parseInt(fish)
+  if (rest == 3){
+    fish += 10;
+  }else if(rest == 18){
+    fish += 50;
+  }
+  document.getElementById("fish").innerText = fish;
+}
+
+// adds a cycle each time a work period is finished
+function addCycle() {
+  cycle++;
+  document.getElementById("cycle").innerText = cycle;
+  document.getElementById("hours").innerText = cycle/2;
+}
 
 // every second, this increments counter by 1
 function timedCount() {
@@ -30,6 +31,7 @@ function timedCount() {
   timeout = setTimeout(timedCount, 1000);
   sendAlert()
 }
+
 
 // starts the timer
 function startCount() {
@@ -62,20 +64,24 @@ function formatCounter(){
 
 //sends alerts when done
 function sendAlert(){
-  rest = 0
-  startCount()
-  if(counter == 1500 && work ){ // if counter reaches 25 minutes and person was working
+  console.log(counter)
+  if(counter == 15 && work ){ // if counter reaches 25 minutes and person was working 
     alert("Congrats, take a break!")
-    if(cycle % 4 == 0){
-      rest = 1800
-    }else{
-      rest = 300
-    }
+    if(cycle % 4 == 0){ // if the user has done 4 cycles of 25-5, they get a half an hour long break
+      rest = 18
+      console.log(18)
+    }else{ // the usual break of 5 mins
+      rest = 3
+      console.log(3)
+    } 
     addCycle();
-    resetCount();
-  }else if(counter == rest && !work){ // if counter reaches 5 minutes and person was on break
+    reset();
+    work = 0
+  }else if(counter == rest && !work){ // if counter reaches rest time and person was on break
     alert("Go work :) You got this!");
-    resetCount();
+    reset();
+    work = 1
+    addFish();
   }
 }
 
