@@ -4,10 +4,10 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     data = {
-        'fish': 5, 
-        'name': "mcNugget",
-        'hours': 3,
-        'cycle': 1
+        'fish': 0, 
+        'name': "McNugget",
+        'hours': 0,
+        'cycle': 0
     }
     return render_template('whiskers.html', data=data)
 
