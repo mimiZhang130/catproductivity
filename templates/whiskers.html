@@ -12,10 +12,10 @@
 </html>
 <body>
   <h1>Be Productive with your Cat :)</h1>
-  <h2>Number of Fish: <span id="fish">0</span></h1>
+  <h2>Number of Fish: <span id="fish">{{ data.fish }}</span></h1>
   <h2>Name: {{data.name}}</h2>
-  <h2>Hours worked: <span id="hours">0</span></h2>
-  <h2>Cycle Number: <span id="cycle">0</span></h2>
+  <h2>Hours worked: <span id="hours">{{ data.hours }}</span></h2>
+  <h2>Cycle Number: <span id="cycle">{{ data.cycle }}</span></h2>
 
   <button onclick="startCount()">START</button>
   <button onclick="stopCount()">STOP</button>
